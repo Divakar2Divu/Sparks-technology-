@@ -100,3 +100,56 @@ footer {
   border: 1px solid #ccc;
   padding: 10px;
 }
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones, portrait viewports) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 1em;
+  }
+
+  .question-item {
+    padding: 10px;
+  }
+
+  .question-item h2 {
+    font-size: 1em;
+  }
+
+  a, button {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin: 3px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 992px) {
+  body {
+    font-size: 16px;
+  }
+
+  .question-list {
+    padding: 0 10px;
+  }
+
+  .modal-content {
+    width: 85%;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 993px) {
+  .modal-content {
+    width: 70%;
+  }
+}
