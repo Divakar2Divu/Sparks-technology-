@@ -153,3 +153,17 @@ footer {
     width: 70%;
   }
 }
+
+
+#textContent {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+button:hover {
+  background-color: #574b90;
+}
