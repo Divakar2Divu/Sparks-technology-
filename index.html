@@ -15,20 +15,31 @@
     <div class="question-list">
       <div class="question-item">
         <h2>Question 1: What is Python?</h2>
-        <a href="files/answer1.pdf" download>Download Answer (PDF)</a>
+        <a href="files/answer1.pdf" target="_blank" download>Download Answer (PDF)</a>
         <a href="files/answer1.py" download>Download Answer (Python)</a>
+        <button onclick="viewPDF('files/answer1.pdf')">View Answer (PDF)</button>
       </div>
       <div class="question-item">
         <h2>Question 2: What are loops in Python?</h2>
-        <a href="files/answer2.pdf" download>Download Answer (PDF)</a>
+        <a href="files/answer2.pdf" target="_blank" download>Download Answer (PDF)</a>
         <a href="files/answer2.py" download>Download Answer (Python)</a>
+        <button onclick="viewPDF('files/answer2.pdf')">View Answer (PDF)</button>
       </div>
-      <!-- Add more question-item blocks for additional questions -->
     </div>
   </main>
   <footer>
     <p>&copy; 2025 Your Website Name</p>
   </footer>
+
+  <!-- Modal for Viewing PDF -->
+  <div id="pdfModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="pdfViewer"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.15.349/pdf.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
