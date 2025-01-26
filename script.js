@@ -35,3 +35,11 @@ function closeModal() {
   const modal = document.getElementById("pdfModal");
   modal.style.display = "none";
 }
+
+// Close modal when clicking outside the modal content
+window.onclick = function (event) {
+  const modal = document.getElementById("pdfModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
