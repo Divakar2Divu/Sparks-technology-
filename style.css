@@ -29,11 +29,12 @@ main {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.question-item h2 {
   font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
-a {
+a, button {
   display: inline-block;
   margin: 5px;
   padding: 10px 15px;
@@ -41,10 +42,16 @@ a {
   color: white;
   background-color: #6c63ff;
   border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
-a:hover {
+a:hover, button:hover {
   background-color: #574b90;
+}
+
+button {
+  outline: none;
 }
 
 footer {
@@ -53,7 +60,6 @@ footer {
   background: #6c63ff;
   color: white;
 }
-
 
 /* Modal styles */
 .modal {
@@ -70,7 +76,7 @@ footer {
 
 .modal-content {
   position: relative;
-  margin: 10% auto;
+  margin: 5% auto;
   padding: 20px;
   background: white;
   border-radius: 8px;
@@ -89,7 +95,7 @@ footer {
 }
 
 #pdfViewer {
-  height: 500px;
+  max-height: 500px;
   overflow-y: scroll;
   border: 1px solid #ccc;
   padding: 10px;
