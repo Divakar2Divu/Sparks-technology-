@@ -1,4 +1,3 @@
-// Function to load and display PDF in modal with copyable text
 function viewPDF(pdfUrl) {
   const modal = document.getElementById("pdfModal");
   const pdfViewer = document.getElementById("pdfViewer");
@@ -18,49 +17,23 @@ function viewPDF(pdfUrl) {
 
     for (let i = 1; i <= pageCount; i++) {
       pdf.getPage(i).then((page) => {
-        const viewport = page.getViewport({ scale: 1.5 });
-        const canvas = document.createElement("canvas");
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-
-        const context = canvas.getContext("2d");
-        const renderContext = { canvasContext: context, viewport: viewport };
-
-        page.render(renderContext).promise.then(() => {
-          pdfViewer.appendChild(canvas);
-        });
-
         // Extract text content
         page.getTextContent().then((textContent) => {
+          const pageDiv = document.createElement("div");
+          pageDiv.style.marginBottom = "20px";
+
           textContent.items.forEach((item) => {
             const span = document.createElement("span");
             span.textContent = item.str + " ";
-            textContainer.appendChild(span);
+            pageDiv.appendChild(span);
           });
+
+          textContainer.appendChild(pageDiv);
         });
       });
     }
 
-    // Add a copy button
-    const copyButton = document.createElement("button");
-    copyButton.textContent = "Copy Text";
-    copyButton.style.marginTop = "20px";
-    copyButton.style.padding = "10px 15px";
-    copyButton.style.backgroundColor = "#6c63ff";
-    copyButton.style.color = "white";
-    copyButton.style.border = "none";
-    copyButton.style.borderRadius = "5px";
-    copyButton.style.cursor = "pointer";
-
-    copyButton.addEventListener("click", () => {
-      const textToCopy = textContainer.textContent;
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        alert("Text copied to clipboard!");
-      });
-    });
-
     pdfViewer.appendChild(textContainer);
-    pdfViewer.appendChild(copyButton);
   });
 
   modal.style.display = "block";
